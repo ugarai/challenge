@@ -1,0 +1,70 @@
+<html>
+<script type="text/javascript">
+
+function arrsort(arr){
+	var bot_index = arr.length -1;
+	var top_index = 0;
+
+	//*
+	while(true){
+		var last_swap_index = top_index;
+		for(var i = top_index; i < bot_index; ++i){
+			if(arr[i] > arr[i+1]){
+				tmp = arr[i+1];
+				arr[i+1] = arr[i];
+				arr[i] = tmp;
+				last_swap_index = i;
+				console.log(arr);
+			}
+		}
+
+		bot_index = last_swap_index;
+
+		if(top_index == bot_index)break;
+	}
+
+	/*///*
+	
+	var len = arr.length - 1;
+	for(var i = 0; i < len; i++){
+		for(var j = 0; j < len; j++){
+			var tmp;
+			if(arr[j] > arr[j+1]){
+				tmp = arr[j+1];
+				arr[j+1] = arr[j];
+				arr[j] = tmp;
+				console.log(arr);
+			}
+		}
+	}
+	//*/
+	return arr;
+}
+
+var arr = [8,4,3,7,6,5,2,1];
+console.log(arr);
+console.log(arrsort(arr));
+
+/* // Fizz Buzz
+for(var start=1; start<=100; start++ ){
+
+	if(0 == (start % 3) && 0 == (start % 5)){
+		console.log("Fizz Buzz")
+		continue;
+	}
+
+	if(0 == (start % 3)){
+		console.log("Fizz");
+		continue;
+	}
+
+	if(0 == (start % 5)){
+		console.log("Buzz")
+		continue;
+	}
+
+	console.log(start);
+}
+*/
+</script>
+</html>
